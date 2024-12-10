@@ -1,0 +1,24 @@
+         +---------------------+                             
+         |      Todo           |         
+         +---------------------+
+         | - id: Long          |
+         | - title: String     |
+         | - description: String|
+         | - dueDate: Date     |
+         | - completed: Boolean|
+         +---------------------+
+         | + getters/setters   |
+         +---------------------+
+
+
++---------------------------+         +---------------------+          +---------------------------+
+| TodoController            |         | TodoService         |          | TodoRepository            |
++---------------------------+         +---------------------+          +---------------------------+
+| - todoService: TodoService|         | - todoRepo: TodoRepository |   | + save(Todo): Todo        |
++---------------------------+         +---------------------+          | + findById(id): Optional<Todo>|
+| + getAllTodos(): List<Todo> |      | + getAllTodos(): List<Todo>    | + deleteById(id): void     |
+| + getTodoById(id): Todo   |         | + getTodoById(id): Todo       | + findAll(): List<Todo>    |
+| + createTodo(todo): Todo  |         | + createTodo(todo): Todo      | + ...                      |
+| + updateTodo(id, todo): Todo |      | + updateTodo(id, todo): Todo  | 
+| + deleteTodo(id): void    |         | + deleteTodo(id): void        |
++---------------------------+         +---------------------+          +---------------------------+
